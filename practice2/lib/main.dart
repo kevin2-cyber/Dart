@@ -4,18 +4,21 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.lightBlueAccent[200],
         appBar: AppBar(
           title: Center(
-            child: Text('How are you'),
+            child: Text('I am Poor'),
           ),
           backgroundColor: Colors.blueAccent[400],
         ),
         body: Container(
           child: Center(
-            child: Text('I\'m fine'),
+            child: Image(
+              image: AssetImage('images/snowman.png'),
+            ),
+          ),
           ),
         ),
       ),
-    ),
   );
 }
