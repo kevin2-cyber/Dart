@@ -5,9 +5,14 @@ void main() {
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blueAccent[400],
           title: Center(
             child: Text('How are you'),
+          ),
+          backgroundColor: Colors.blueAccent[400],
+        ),
+        body: Container(
+          child: Center(
+            child: Text('I\'m fine'),
           ),
         ),
       ),
