@@ -14,32 +14,18 @@ class MyApp extends StatelessWidget {
        backgroundColor: Colors.teal,
         body: SafeArea(
           child: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  height: double.infinity,
-                  width: 100.0,
-                  color: Colors.red,
-                  child: const Center(
-                      child: Text('Container 1'),
-                  ),
+            child: Column(
+              children: const <Widget>[
+                CircleAvatar(
+                  radius: 50.0,
+                  backgroundImage: AssetImage('images/profile.jpg'),
                 ),
-                Container(
-                  height: 100.0,
-                  width: 100.0,
-                  color: Colors.yellow,
-                  child: const Center(
-                    child: Text('Container 2'),
-                  ),
-                ),
-                Container(
-                  height: double.infinity,
-                  width: 100.0,
-                  color: Colors.blue,
-                  child:  const Center(
-                    child: Text('Container 3'),
+                Text(
+                  'Kelvin Eduful',
+                  style: TextStyle(
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
                 ),
               ],
