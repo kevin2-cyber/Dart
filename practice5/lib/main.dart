@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget {
         body: SafeArea(
           child: Center(
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  height: 100.0,
+                  height: double.infinity,
                   width: 100.0,
-                  color: Colors.white,
+                  color: Colors.red,
                   child: const Center(
                       child: Text('Container 1'),
                   ),
@@ -29,15 +29,15 @@ class MyApp extends StatelessWidget {
                 Container(
                   height: 100.0,
                   width: 100.0,
-                  color: Colors.white38,
+                  color: Colors.yellow,
                   child: const Center(
                     child: Text('Container 2'),
                   ),
                 ),
                 Container(
-                  height: 100.0,
+                  height: double.infinity,
                   width: 100.0,
-                  color: Colors.white12,
+                  color: Colors.blue,
                   child:  const Center(
                     child: Text('Container 3'),
                   ),
