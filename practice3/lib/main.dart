@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(const StartApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class StartApp extends StatelessWidget {
+  const StartApp({Key? key}) : super(key: key);
 
 
   @override
