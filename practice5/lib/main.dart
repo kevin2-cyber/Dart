@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const CircleAvatar(
                 radius: 50.0,
@@ -39,52 +40,44 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Card(
-                color: Colors.white,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                child: Row(
-                  children: <Widget>[
-                    Icon(
-                        Icons.phone,
-                      color: Colors.teal,
-                    ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      '+44 234 567 8901',
-                      style: TextStyle(
-                        color: Colors.teal.shade900,
-                        fontFamily: 'Source-Sans',
-                        fontSize: 20.0,
-                      ),
-                    ),
-                  ],
+              SizedBox(
+                height: 20.0,
+                width: 150.0,
+                child: Divider(
+                  color: Colors.teal.shade100,
                 ),
               ),
               Card(
-                color: Colors.white,
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                child: Padding(
-                  padding: EdgeInsets.all(25.0),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
-                        Icons.email,
-                        color: Colors.teal,
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        'info@email.com',
-                        style: TextStyle(
-                          color: Colors.teal.shade900,
-                          fontFamily: 'Source-Sans',
-                          fontSize: 20.0,
-                        ),
-                      ),
-                    ],
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    '+44 234 567 8901',
+                    style: TextStyle(
+                      color: Colors.teal.shade900,
+                      fontFamily: 'Source-Sans',
+                      fontSize: 20.0,
+                    ),
+                  ),
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal,
+                  ),
+                  title: Text(
+                    'info@email.com',
+                    style: TextStyle(
+                      color: Colors.teal.shade900,
+                      fontFamily: 'Source-Sans',
+                      fontSize: 20.0,
+                    ),
                   ),
                 ),
               ),
