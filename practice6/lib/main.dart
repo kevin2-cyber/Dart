@@ -10,8 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
-      home: const HomePage(),
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.red,
+        ),
+        backgroundColor: Colors.red[900],
+      ),
     );
   }
 }
@@ -26,10 +30,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return const Center(
         child: Text('Hello world'),
-      ),
-    );
+      );
   }
 }
