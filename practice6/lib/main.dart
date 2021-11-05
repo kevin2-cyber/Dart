@@ -13,10 +13,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Dicee'),
+          title: const Center(
+            child: Text('Dicee'),
+          ),
           backgroundColor: Colors.red,
         ),
-        backgroundColor: Colors.red[100],
+        backgroundColor: Colors.red[400],
         body: const HomePage(),
       ),
     );
