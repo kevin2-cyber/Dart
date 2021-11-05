@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,9 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          title: const Text('Dicee'),
           backgroundColor: Colors.red,
         ),
-        backgroundColor: Colors.red[900],
+        backgroundColor: Colors.red[100],
+        body: const HomePage(),
       ),
     );
   }
@@ -28,10 +31,39 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int leftDice = 1;
+  int rightDice = 1;
+
+  void changeDice(){
+    setState(() {
+      leftDice = Random().nextInt(6) + 1;
+      rightDice = Random().nextInt(6) + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Center(
-        child: Text('Hello world'),
+    return Center(
+        child: Row(
+          children: [
+            Expanded(
+                child: TextButton(
+                  onPressed: (){
+                    changeDice();
+                  },
+                  child: Image.asset('images/dice$leftDice.png'),
+                ),
+            ),
+            Expanded(
+                child: TextButton(
+                  onPressed: () {
+                    changeDice();
+                  },
+                  child: Image.asset('images/dice$rightDice.png'),
+                ),
+            ),
+          ],
+        ),
       );
   }
 }
