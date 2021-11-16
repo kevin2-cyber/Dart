@@ -39,20 +39,29 @@ class _MyHomePageState extends State<MyHomePage> {
     return Column(
       children: [
         Container(
-          child: TextButton(
-              onPressed: (){},
-              child: const Text('Username'),
+          decoration: BoxDecoration(
+            color: const Color(0xfff1f1f5),
+            borderRadius: BorderRadius.circular(14.0)
+          ),
+          child: TextFormField(
+            decoration: const InputDecoration(
+              hintText: 'Username',
+              hintStyle: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+              border: OutlineInputBorder(
+                borderSide: BorderSide.none,
+              ),
+            ),
           ),
           color: Colors.green,
         ),
         const SizedBox(
-          height: 20.0,
+          height: 32.0,
         ),
         Container(
-          child: TextButton(
-            onPressed: (){},
-            child: const Text('Password'),
-          ),
+          child: const Text('Password'),
           color: Colors.greenAccent,
         ),
         const SizedBox(
