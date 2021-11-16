@@ -13,22 +13,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sign Up',
       theme: ThemeData.dark(),
-      home: Scaffold(
+      home: const Scaffold(
       //  appBar: AppBar(
        //   title: const Center(
         //    child: Text('Register with us'),
        //   ),
       //    backgroundColor: Colors.lightBlueAccent,
      //   ),
-        body: Container(
-          constraints: const BoxConstraints.expand(),
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('images/snowman.png'),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
+        body:MyHomePage(title: 'Sign Up'),
       ),
     );
   }
@@ -44,7 +36,34 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      children: [
+        Container(
+          child: TextButton(
+              onPressed: (){},
+              child: const Text('Username'),
+          ),
+          color: Colors.green,
+        ),
+        const SizedBox(
+          height: 20.0,
+        ),
+        Container(
+          child: TextButton(
+            onPressed: (){},
+            child: const Text('Password'),
+          ),
+          color: Colors.greenAccent,
+        ),
+        const SizedBox(
+          height: 200.0,
+        ),
+        ElevatedButton(
+          onPressed: (){},
+          child: const Text('Sign Up'),
+        ),
+      ],
+    );
   }
 }
 
