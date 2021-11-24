@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice9/quiz_brain.dart';
 
-QuizBrain quizBrain = QuizBrain();
-
 void main() => runApp(const Quizler());
 
 class Quizler extends StatelessWidget {
@@ -34,9 +32,29 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+  QuizBrain quizBrain = QuizBrain();
 
   List<Icon> scoreKeeper = [];
 
+  void checkAnswer(bool userPickedAnswer) {
+    bool correctAns = quizBrain.getCorrectAns();
+
+    setState(() {
+      if (userPickedAnswer == correctAns) {
+        scoreKeeper.add(const Icon(
+          Icons.check,
+          color: Colors.green,
+        ));
+      } else {
+        scoreKeeper.add(const Icon(
+          Icons.close,
+          color: Colors.red,
+        ));
+      }
+
+      quizBrain.nextQuestion();
+    });
+  }
   /*List<String> questions = [
     'You can lead a cow down stairs but not up stairs.',
     'Approximately one quarter of human bones are in the feet.',
@@ -51,15 +69,13 @@ class _QuizPageState extends State<QuizPage> {
     true
   ];*/
 
-
-
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-         Expanded(
+        Expanded(
           flex: 5,
           child: Padding(
             padding: const EdgeInsets.all(10.0),
@@ -80,8 +96,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(15.0),
             child: TextButton(
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.green)
-              ),
+                  backgroundColor: MaterialStateProperty.all(Colors.green)),
               child: const Text(
                 'True',
                 style: TextStyle(
@@ -89,25 +104,14 @@ class _QuizPageState extends State<QuizPage> {
                   fontSize: 20.0,
                 ),
               ),
-              onPressed: (){
+              onPressed: () {
                 //The user picked true.
-
-                bool correctAns = quizBrain.getCorrectAns();
-
-                if(correctAns == true){
-                  print('user picked right');
-                } else {
-                  print('user got wrong');
-                }
-
-                setState(() {
-                  quizBrain.nextQuestion();
-                });
+                checkAnswer(true);
               },
             ),
           ),
         ),
-         Expanded(
+        Expanded(
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: TextButton(
@@ -121,17 +125,9 @@ class _QuizPageState extends State<QuizPage> {
                   color: Colors.white,
                 ),
               ),
-              onPressed: (){
+              onPressed: () {
                 //The user picked false.
-
-                bool correctAns = quizBrain.getCorrectAns();
-
-                if(correctAns == true){
-                  print('user picked right');
-                } else {
-                  print('user got wrong');
-                }
-                quizBrain.nextQuestion();
+                checkAnswer(false);
               },
             ),
           ),
@@ -144,7 +140,6 @@ class _QuizPageState extends State<QuizPage> {
     );
   }
 }
-
 
 /*
 question1: 'You can lead a cow down stairs but not up stairs.', false,
