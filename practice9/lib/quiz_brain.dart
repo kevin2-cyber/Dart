@@ -7,19 +7,19 @@ class QuizBrain{
   int _questionNum = 0;
 
   final List<Question> _questionBank = [
-    Question(q:'You can lead a cow down stairs but not up stairs.', a: false),
-    Question(q:'Approximately one quarter of human bones are in the feet.', a: true),
-    Question(q:'A slug\'s blood is green.', a: true),
-    Question(q: 'Some cats are actually allergic to humans', a: true),
-    Question(q: 'Buzz Aldrin\'s mother\'s maiden name was "Moon".', a: true),
-    Question(q: 'It is illegal to pee in the Ocean in Portugal.', a: true),
-    Question(q: 'No piece of square dry paper can be folded in half more than 7 times.', a: false),
-    Question(q: 'In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.', a: true),
-    Question(q: 'The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.', a: false),
-    Question(q: 'The total surface area of two human lungs is approximately 70 square metres.', a: true),
-    Question(q: 'Google was originally called "Backrub".', a: true),
-    Question(q: 'Chocolate affects a dog\'s heart and nervous system; a few ounces are enough to kill a small dog.', a: true),
-    Question(q: 'In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.', a: true),
+    Question('You can lead a cow down stairs but not up stairs.', false),
+    Question('Approximately one quarter of human bones are in the feet.', true),
+    Question('A slug\'s blood is green.', true),
+    Question('Some cats are actually allergic to humans', true),
+    Question('Buzz Aldrin\'s mother\'s maiden name was "Moon".', true),
+    Question('It is illegal to pee in the Ocean in Portugal.', true),
+    Question('No piece of square dry paper can be folded in half more than 7 times.', false),
+    Question('In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.', true),
+    Question('The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.', false),
+    Question('The total surface area of two human lungs is approximately 70 square metres.', true),
+    Question('Google was originally called "Backrub".', true),
+    Question('Chocolate affects a dog\'s heart and nervous system; a few ounces are enough to kill a small dog.', true),
+    Question('In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.', true),
   ];
 
   void nextQuestion(){
@@ -37,4 +37,21 @@ class QuizBrain{
     return _questionBank[_questionNum].questionAnswer;
   }
 
+
+//TODO: Step 3 Part A - Create a method called isFinished() here that checks to see if we have reached the last question. It should return (have an output) true if we've reached the last question and it should return false if we're not there yet.
+
+  bool isFinished(){
+    if(_questionNum >= _questionBank.length - 1){
+      return true;
+    } else{
+      return false;
+    }
+  }
+//TODO: Step 3 Part B - Use a print statement to check that isFinished is returning true when you are indeed at the end of the quiz and when a restart should happen.
+
+//TODO: Step 4 Part B - Create a reset() method here that sets the questionNumber back to 0.
+
+  void reset(){
+    _questionNum = 0;
+  }
 }

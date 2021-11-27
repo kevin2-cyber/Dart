@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+//TODO: Step 2 - Import the rFlutter_Alert package here.
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:practice9/quiz_brain.dart';
 
 void main() => runApp(const Quizler());
@@ -40,19 +42,36 @@ class _QuizPageState extends State<QuizPage> {
     bool correctAns = quizBrain.getCorrectAns();
 
     setState(() {
-      if (userPickedAnswer == correctAns) {
-        scoreKeeper.add(const Icon(
-          Icons.check,
-          color: Colors.green,
-        ));
-      } else {
-        scoreKeeper.add(const Icon(
-          Icons.close,
-          color: Colors.red,
-        ));
+      //TODO: Step 4 - Use IF/ELSE to check if we've reached the end of the quiz. If true, execute Part A, B, C, D.
+      if (quizBrain.isFinished() == true) {
+        //TODO: Step 4 Part A - show an alert using rFlutter_alert (remember to read the docs for the package!)
+        Alert(
+          context: context,
+          title: 'Finished',
+          desc: 'You\'ve reached the end of the quiz.',
+        ).show();
+        //HINT! Step 4 Part B is in the quiz_brain.dart
+        //TODO: Step 4 Part C - reset the questionNumber,
+        quizBrain.reset();
+        //TODO: Step 4 Part D - empty out the scoreKeeper.
+        scoreKeeper = [];
       }
+      //TODO: Step 5 - If we've not reached the end, ELSE do the answer checking steps below 👇
+      else {
+        if (userPickedAnswer == correctAns) {
+          scoreKeeper.add(const Icon(
+            Icons.check,
+            color: Colors.green,
+          ));
+        } else {
+          scoreKeeper.add(const Icon(
+            Icons.close,
+            color: Colors.red,
+          ));
+        }
 
-      quizBrain.nextQuestion();
+        quizBrain.nextQuestion();
+      }
     });
   }
   /*List<String> questions = [
