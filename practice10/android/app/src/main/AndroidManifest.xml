@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.destini">
+    package="com.example.practice10">
    <application
-        android:label="destini"
+        android:label="practice10"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

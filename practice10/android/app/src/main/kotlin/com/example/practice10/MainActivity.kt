@@ -1,4 +1,4 @@
-package com.example.destini
+package com.example.practice10
 
 import io.flutter.embedding.android.FlutterActivity
 
