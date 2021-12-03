@@ -11,7 +11,7 @@ class ButtonWidget extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => RaisedButton(
+  Widget build(BuildContext context) => MaterialButton(
     onPressed: onClicked,
     color: Theme.of(context).primaryColor,
     shape: const StadiumBorder(),

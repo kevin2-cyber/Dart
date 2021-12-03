@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sign_up_page_sample/main.dart';
+import 'package:sign_up_page_sample/page/sign_in_page.dart';
 import 'package:sign_up_page_sample/widget/button_widget.dart';
 
 
@@ -52,31 +53,28 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 10.0,
                 ),
-                Text(
-                    'Participate in campus',
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      color: buttonColor,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Text(
-                    'elections easily',
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      color: buttonColor,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+                Center(
+                  child: Text(
+                      'Participate in campus\n        elections easily',
+                    style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                        color: buttonColor,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
                 const SizedBox(
                   height: 50.0,
                 ),
-                const Button(
+                 Button(
                   text: 'Log In',
+                   onTap: (){
+                    Navigator.push(
+                      context,
+                    MaterialPageRoute(builder: (context)=>const SignInPage()));
+                   },
                 ),
               ],
           ),
