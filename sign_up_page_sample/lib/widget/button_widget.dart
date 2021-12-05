@@ -15,7 +15,7 @@ class Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      minWidth: 190.0,
+      minWidth: 240.0,
       height: 60.0,
       onPressed: onTap,
       color: buttonColor,

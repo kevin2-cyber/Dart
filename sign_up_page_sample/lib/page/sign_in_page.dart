@@ -14,10 +14,33 @@ class SignInPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text('Hello'),
-              const Text('World'),
-              const Text('How are you'),
-              const Text('I\'m fine'),
+               Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      border: UnderlineInputBorder(),
+                      labelText: 'Enter your username',
+                    ),
+                  ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    border: const UnderlineInputBorder(),
+                    labelText: 'Enter your password',
+                    suffixIcon: IconButton(
+                        onPressed:(){},
+                        icon: const Icon(
+                          Icons.visibility_off_outlined,
+                        ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 50.0,
+              ),
               Button(
                 text: 'Log In',
                 onTap: (){

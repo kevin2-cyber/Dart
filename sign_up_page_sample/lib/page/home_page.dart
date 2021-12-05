@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sign_up_page_sample/main.dart';
+import 'package:sign_up_page_sample/page/changed_password.dart';
 import 'package:sign_up_page_sample/page/sign_in_page.dart';
 import 'package:sign_up_page_sample/widget/button_widget.dart';
 
@@ -23,13 +24,20 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Stack(
           children: [
-            Positioned(
-              top: 50,
-              right: 50,
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: Colors.red,
-                ),
+            Container(
+              height: 200.0,
+              width: 200.0,
+              decoration: const BoxDecoration(
+                color: Colors.white12,
+                borderRadius: BorderRadius.only(bottomRight: Radius.circular(200.0), bottomLeft: Radius.circular(200.0), topRight: Radius.circular(200.0),),
+              ),
+            ),
+            Container(
+              height: 180.0,
+              width: 180,
+              decoration: const BoxDecoration(
+                color: topSideColor,
+                borderRadius: BorderRadius.only(bottomRight: Radius.circular(200.0),bottomLeft: Radius.circular(200.0), topRight: Radius.circular(200.0),),
               ),
             ),
             Center(
@@ -73,9 +81,20 @@ class _HomePageState extends State<HomePage> {
                    onTap: (){
                     Navigator.push(
                       context,
-                    MaterialPageRoute(builder: (context)=>const SignInPage()));
+                    MaterialPageRoute(builder: (context)=>const ChangedPassword()));
                    },
                 ),
+                const SizedBox(
+                  height: 50.0,
+                ),
+                Button(
+                    text: 'Log In',
+                    onTap: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context)=> const SignInPage()));
+                    },
+                )
               ],
           ),
             ),
