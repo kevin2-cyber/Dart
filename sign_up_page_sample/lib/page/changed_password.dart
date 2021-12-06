@@ -12,15 +12,13 @@ class ChangedPassword extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Center(
-                    child: Container(
-                      padding: const EdgeInsets.only(left: 400.0),
+          child: Container(
+            margin: const EdgeInsets.all(400.0),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Center(
                       child: Text(
                           'Password changed successfully',
                         style: GoogleFonts.poppins(
@@ -30,27 +28,24 @@ class ChangedPassword extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  const Icon(
-                    Icons.check_circle,
-                    color: Colors.green,
-                    size: 50.0,
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 100.0,
-              ),
-              Button(
-                  text: 'Home Page',
-                  onTap: (){
-                    Navigator.pop(context);
-                  }
-              ),
-            ],
+                    const Icon(
+                      Icons.check_circle,
+                      color: Colors.green,
+                      size: 50.0,
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 100.0,
+                ),
+                Button(
+                    text: 'Home Page',
+                    onTap: (){
+                      Navigator.pop(context);
+                    }
+                ),
+              ],
+            ),
           ),
         ),
       ),

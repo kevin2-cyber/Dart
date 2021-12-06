@@ -76,17 +76,6 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 50.0,
                 ),
-                 Button(
-                  text: 'Log In',
-                   onTap: (){
-                    Navigator.push(
-                      context,
-                    MaterialPageRoute(builder: (context)=>const ChangedPassword()));
-                   },
-                ),
-                const SizedBox(
-                  height: 50.0,
-                ),
                 Button(
                     text: 'Log In',
                     onTap: (){

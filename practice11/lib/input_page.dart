@@ -24,27 +24,27 @@ class _InputPageState extends State<InputPage> {
         children: <Widget>[
           Expanded(
             child: Row(
-              children: const <Widget>[
+              children: <Widget>[
                 Expanded(
-                  child: ReusableCard(colour: activeCardColor),
+                  child: ReusableCard(activeCardColor),
                 ),
                 Expanded(
-                  child: ReusableCard(colour: activeCardColor),
+                  child: ReusableCard(activeCardColor),
                 ),
               ],
             ),
           ),
-          const Expanded(
-            child: ReusableCard(colour: activeCardColor),
+          Expanded(
+            child: ReusableCard(activeCardColor),
           ),
           Expanded(
             child: Row(
-              children: const <Widget>[
+              children: <Widget>[
                 Expanded(
-                  child: ReusableCard(colour: activeCardColor),
+                  child: ReusableCard(activeCardColor),
                 ),
                 Expanded(
-                  child: ReusableCard(colour: activeCardColor),
+                  child: ReusableCard(activeCardColor),
                 ),
               ],
             ),
@@ -62,7 +62,7 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ReusableCard extends StatelessWidget {
-    const ReusableCard({required this.colour, this.cardChild});
+    const ReusableCard(this.colour, this.cardChild, {Key? key}):  super(key: key);
 
   final Color colour;
   final Widget cardChild;
