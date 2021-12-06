@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sign_up_page_sample">
    <application
-        android:label="sign_up_page_sample"
+        android:label="UG-EVote"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

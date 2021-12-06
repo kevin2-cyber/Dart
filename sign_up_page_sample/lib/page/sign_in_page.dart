@@ -1,7 +1,13 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sign_up_page_sample/main.dart';
 import 'package:sign_up_page_sample/page/welcome.dart';
 import 'package:sign_up_page_sample/widget/button_widget.dart';
+
+import 'home_page.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -67,6 +73,46 @@ class _SignInPageState extends State<SignInPage> {
                         context,
                         MaterialPageRoute(builder: (context)=> const WelcomePage()));
                   },
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                Center(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                          'Back to',
+                          style: GoogleFonts.poppins(
+                            color: Colors.black26,
+                            textStyle: const TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                      ),
+                      const SizedBox(
+                        width: 5.0,
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context)=> const HomePage())
+                          );
+                        },
+                        child: Text(
+                            'Homepage',
+                            style: GoogleFonts.poppins(
+                              color: buttonColor,
+                              textStyle: const TextStyle(
+                                fontSize: 20.0,
+                              ),
+                            ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
