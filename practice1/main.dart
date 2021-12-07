@@ -8,6 +8,15 @@ class Car{
 
 }
 
+class Ball{
+
+  late int circles;
+  late int hexagons;
+
+  Ball(this.circles, this.hexagons);
+
+
+}
 
 
 
