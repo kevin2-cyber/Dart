@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sign_up_page_sample/main.dart';
 import 'package:sign_up_page_sample/page/welcome.dart';
@@ -40,9 +42,24 @@ class _SignInPageState extends State<SignInPage> {
                   padding:
                       const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
                   child: TextFormField(
-                    decoration: const InputDecoration(
-                      border: UnderlineInputBorder(),
+                    decoration: InputDecoration(
+                      enabledBorder: const UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.black12,
+                        ),
+                      ),
+                      focusedBorder: const UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: buttonColor,
+                        ),
+                      ),
                       hintText: 'Student ID',
+                      hintStyle: GoogleFonts.poppins(
+                        color: buttonColor,
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -52,8 +69,24 @@ class _SignInPageState extends State<SignInPage> {
                   child: TextFormField(
                     obscureText: !passwordVisible,
                     decoration: InputDecoration(
-                      border: const UnderlineInputBorder(),
+                      enabledBorder: const UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.black12,
+                        ),
+                      ),
+                      focusedBorder: const UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: buttonColor,
+                        ),
+                      ),
+                      focusColor: buttonColor,
                       hintText: 'Password',
+                      hintStyle: GoogleFonts.poppins(
+                        color: buttonColor,
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       suffixIcon: IconButton(
                         onPressed: togglePassword,
                         icon: Icon(passwordVisible
