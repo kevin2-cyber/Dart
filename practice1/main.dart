@@ -13,7 +13,11 @@ class Ball{
   late int circles;
   late int hexagons;
 
-  Ball(this.circles, this.hexagons);
+  Ball({required this.circles, required this.hexagons});
+
+  int play(){
+    return circles + hexagons;
+  }
 
 
 }
@@ -27,6 +31,11 @@ void main(List<String> args) {
 
   Car myCar = Car();
   myCar.drive();
+
+  Ball myBall = Ball(circles: 20, hexagons: 20);
+
+  print(myBall.play());
+
 }
 
 int sum(int num1, int num2) {
