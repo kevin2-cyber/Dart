@@ -5,6 +5,7 @@ import 'input_page.dart';
 const scaffoldColor = Color(0xFF0A0E21);
 const activeCardColor = Color(0xFF1D1E33);
 const bottomContainerColor = Color(0xFFEB1555);
+const textColor = Color(0xFF8D8E98);
 
 void main() => runApp(const BMICalculator());
 
@@ -21,6 +22,7 @@ class BMICalculator extends StatelessWidget {
         ),
         scaffoldBackgroundColor: scaffoldColor,
       ),
+      debugShowCheckedModeBanner: false,
       title: title,
       home: const InputPage(),
     );
