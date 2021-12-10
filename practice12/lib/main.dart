@@ -1,115 +1,213 @@
+import 'package:flutter/cupertino.dart';   // NEW
+import 'package:flutter/foundation.dart'; // NEW
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const FriendlyChatApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+final ThemeData kIOSTheme = ThemeData(
+  primarySwatch: Colors.orange,
+  primaryColor: Colors.grey[100],
+  primaryColorBrightness: Brightness.light,
+);
 
-  // This widget is the root of your application.
+final ThemeData kDefaultTheme = ThemeData(
+  colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.purple)
+      .copyWith(secondary: Colors.orangeAccent[400]),
+);
+
+String _name = 'Your Name';
+
+class FriendlyChatApp extends StatelessWidget {
+  const FriendlyChatApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      title: 'Friendly Chat',
+      theme: defaultTargetPlatform == TargetPlatform.iOS // NEW
+          ? kIOSTheme // NEW
+          : kDefaultTheme,
+      home: const ChatScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class ChatMessage extends StatelessWidget {
+  const ChatMessage(
+      {required this.text,
+      required this.animationController, // NEW
+      Key? key})
+      : super(key: key);
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  final String text;
+  final AnimationController animationController; // NEW
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+    return SizeTransition(
+      sizeFactor: // NEW
+          CurvedAnimation(
+              parent: animationController, curve: Curves.easeOut), // NEW
+      axisAlignment: 0.0, // NEW
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 10.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: const EdgeInsets.only(right: 16.0),
+              child: CircleAvatar(child: Text(_name[0])),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(_name, style: Theme.of(context).textTheme.headline4),
+                  Container(
+                    margin: const EdgeInsets.only(top: 5.0),
+                    child: Text(text),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class ChatScreen extends StatefulWidget {
+  const ChatScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ChatScreen> createState() => _ChatScreenState();
+}
+
+class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
+  final List<ChatMessage> _messages = []; // NEW
+  final _textController = TextEditingController();
+  final FocusNode _focusNode = FocusNode(); // NEW
+  bool _isComposing = false; // NEW
+
+  @override
+  void dispose() {
+    for (var message in _messages) {
+      message.animationController.dispose();
+    }
+    super.dispose();
+  }
+
+  Widget _buildTextComposer() {
+    return IconTheme(
+      data:
+          IconThemeData(color: Theme.of(context).colorScheme.secondary), // NEW
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: Row(
+          children: <Widget>[
+            Flexible(
+              child: TextField(
+                controller: _textController,
+                onChanged: (text) {
+                  // NEW
+                  setState(() {
+                    // NEW
+                    _isComposing = text.isNotEmpty; // NEW
+                  }); // NEW
+                }, // NEW
+                onSubmitted: _isComposing ? _handleSubmitted : null,
+                decoration:
+                    const InputDecoration.collapsed(hintText: 'Send a message'),
+                focusNode: _focusNode,
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 4.0),
+              child: Theme.of(context).platform == TargetPlatform.iOS ? // MODIFIED
+              CupertinoButton(                                          // NEW
+                child: const Text('Send'),                              // NEW
+                onPressed: _isComposing                                 // NEW
+                    ? () =>  _handleSubmitted(_textController.text)     // NEW
+                    : null,) :
+              IconButton(
+                icon: const Icon(Icons.send),
+                onPressed: _isComposing
+                    ? () => _handleSubmitted(_textController.text)
+                    : null,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _handleSubmitted(String text) {
+    _textController.clear();
+    setState(() {
+      // NEW
+      _isComposing = false; // NEW
+    }); // NEW
+    ChatMessage message = ChatMessage(
+      // NEW
+      text: text,
+      animationController: AnimationController(
+        duration: const Duration(milliseconds: 700), // NEW
+        vsync: this,
+      ), // NEW
+    ); // NEW
+    setState(() {
+      // NEW
+      _messages.insert(0, message); // NEW
+    });
+    _focusNode.requestFocus();
+    message.animationController.forward(); // NEW
+// NEW
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Center(
+          child: Text('Friendly Chat'),
+        ),
+        elevation: Theme.of(context).platform == TargetPlatform.iOS
+            ? 0.0
+            : 4.0, // NEW,
+      ),
+      body: Container(
+        child: Column(
+          children: <Widget>[
+            Flexible(
+              // NEW
+              child: ListView.builder(
+                // NEW
+                padding: const EdgeInsets.all(8.0), // NEW
+                reverse: true, // NEW
+                itemBuilder: (_, index) => _messages[index], // NEW
+                itemCount: _messages.length, // NEW
+              ), // NEW
+            ), // NEW
+            const Divider(height: 1.0),
+            Container(
+              decoration: BoxDecoration(
+                color: Theme.of(context).cardColor,
+              ),
+              child: _buildTextComposer(),
+            ),
+          ],
+        ),
+        decoration: Theme.of(context).platform == TargetPlatform.iOS // NEW
+            ? BoxDecoration(                                 // NEW
+          border: Border(                              // NEW
+            top: BorderSide(color: Colors.grey[200]!), // NEW
+          ),                                           // NEW
+        )                                              // NEW
+            : null,
+      ),
     );
   }
 }
