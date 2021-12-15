@@ -1,15 +1,10 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sign_up_page_sample/main.dart';
+import 'package:sign_up_page_sample/page/forgot_password_page.dart';
+import 'package:sign_up_page_sample/page/theme.dart';
 import 'package:sign_up_page_sample/page/welcome.dart';
 import 'package:sign_up_page_sample/widget/button_widget.dart';
 
-import 'home_page.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -37,7 +32,7 @@ class _SignInPageState extends State<SignInPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
+              children: <Widget>[
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
@@ -115,31 +110,20 @@ class _SignInPageState extends State<SignInPage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
-                          'Back to',
-                          style: GoogleFonts.poppins(
-                            color: Colors.black26,
-                            textStyle: const TextStyle(
-                              fontSize: 20.0,
-                            ),
-                          ),
-                      ),
-                      const SizedBox(
-                        width: 5.0,
-                      ),
                       GestureDetector(
                         onTap: (){
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context)=> const HomePage())
+                            MaterialPageRoute(builder: (context)=> const ForgotPassword())
                           );
                         },
                         child: Text(
-                            'Homepage',
+                            'FORGOT PASSWORD?',
                             style: GoogleFonts.poppins(
                               color: buttonColor,
-                              textStyle: const TextStyle(
+                              textStyle:  const TextStyle(
                                 fontSize: 20.0,
+                                decoration: TextDecoration.underline,
                               ),
                             ),
                         ),

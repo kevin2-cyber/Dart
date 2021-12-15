@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sign_up_page_sample/widget/button_widget.dart';
@@ -39,7 +37,7 @@ class ChangedPassword extends StatelessWidget {
                   height: 100.0,
                 ),
                 Button(
-                    text: 'Home Page',
+                    text: 'Back to Home Page',
                     onTap: (){
                       Navigator.pop(context);
                     }

@@ -6,6 +6,8 @@ import 'package:sign_up_page_sample/main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sign_up_page_sample/page/sign_in_page.dart';
 
+import '../page/theme.dart';
+
 class Button extends StatelessWidget {
   const Button({Key? key, required this.text, required this.onTap}): super(key: key);
 

@@ -1,10 +1,7 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sign_up_page_sample/main.dart';
 import 'package:sign_up_page_sample/page/sign_in_page.dart';
+import 'package:sign_up_page_sample/page/theme.dart';
 import 'package:sign_up_page_sample/widget/button_widget.dart';
 
 
