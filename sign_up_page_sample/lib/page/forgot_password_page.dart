@@ -13,6 +13,13 @@ class ForgotPassword extends StatefulWidget {
 
 class _ForgotPasswordState extends State<ForgotPassword> {
   bool passwordVisible = false;
+  bool obscuredText = false;
+
+  void toggleText() {
+    setState(() {
+      obscuredText = !obscuredText;
+    });
+  }
 
   void togglePassword() {
     setState(() {
@@ -34,7 +41,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   padding:
                       const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
                   child: TextFormField(
-                    obscureText: !passwordVisible,
+                    obscureText: !obscuredText,
                     decoration: InputDecoration(
                       enabledBorder: const UnderlineInputBorder(
                         borderSide: BorderSide(
@@ -55,8 +62,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         ),
                       ),
                       suffixIcon: IconButton(
-                        onPressed: togglePassword,
-                        icon: Icon(passwordVisible
+                        onPressed: toggleText,
+                        icon: Icon(obscuredText
                             ? Icons.visibility_outlined
                             : Icons.visibility_off_outlined),
                       ),
