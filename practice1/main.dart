@@ -1,43 +1,16 @@
 
-class Car{
+// import a method from the dart:io library
+import 'dart:io';
 
-  int numberOfSeats = 5;
-  void drive(){
-    print('I am driving');
-  }
-
+// Define a function.
+void printInteger(String aNumber) {
+  print('The name is $aNumber.'); // Print to console.
 }
 
-class Ball{
-
-  late int circles;
-  late int hexagons;
-
-  Ball({required this.circles, required this.hexagons});
-
-  int play(){
-    return circles + hexagons;
-  }
-
-
-}
-
-
-
+// This is where the app starts executing.
 void main(List<String> args) {
-  var car = 'BMW';
-  int sum2 = sum(4, 6);
-  print('This is my new ${car}, ${sum2}');
-
-  Car myCar = Car();
-  myCar.drive();
-
-  Ball myBall = Ball(circles: 20, hexagons: 20);
-
-  print(myBall.play());
-
-}
-
-int sum(int num1, int num2) {
-  return num1 + num2;
+  //var number = 42; // Declare and initialize a variable.
+  //printInteger(number); // Call a function.
+  String? name = stdin.readLineSync(); // accepting input from the user and make it nullable
+  printInteger(name!); // call a function and add a null check
 }
