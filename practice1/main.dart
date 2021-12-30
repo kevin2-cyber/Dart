@@ -24,6 +24,22 @@
 
 // values can't be null unless you say they can in null safety
 
-void main(List<String> args) {}
+import 'dart:io';
+
+/*String message(bool isValid) {
+  return isValid ? 'This is valid' : 'This is not valid';
+}*/
+
+void main(List<String> args) {
+
+  int age = stdin.readByteSync();
+// applying ternary operators in dart
+  String output = age < 1 ? 'Infant' : age < 4 ? 'Baby': 'Grown';
+
+ print(output);
+//print(message(true));
+
+
+}
 
 
