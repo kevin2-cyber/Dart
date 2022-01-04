@@ -43,4 +43,8 @@
 
 
 
-void main(List<String> args) {}
+void main(List<String> args) {
+  // The Object class is the base class for non-Null classes
+  Object car = 'Hello'; // Using the object class
+  print(car.runtimeType); // printing out the runtimeType of the car variable
+}
