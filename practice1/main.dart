@@ -105,3 +105,15 @@ void main() {
 
 }
 */
+
+// Final and Const
+// Final variables are only set once whilst Const variables are compile-time constants (Const variables are implicitly final)
+// Instance variables can be final but not const
+
+void main(List<String> args) {
+
+  final name = 'Bob';
+
+  final String surName = 'Bobby';
+
+}
