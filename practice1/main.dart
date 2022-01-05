@@ -42,9 +42,66 @@
 }*/
 
 
-
-void main(List<String> args) {
+// variables in dart
+/*void main(List<String> args) {
   // The Object class is the base class for non-Null classes
   Object car = 'Hello'; // Using the object class
   print(car.runtimeType); // printing out the runtimeType of the car variable
+}*/
+
+/*void main(List<String> args) {
+  // int? lineCount;
+  // assert(lineCount == null);
+}*/
+
+/*// variable
+late String description;
+// declaration of late modifier
+
+// late variables
+void main(List<String> args) {
+  description = 'Hello World';
+  print(description);
+}*/
+
+/*
+// more on late variables
+// creating class Thermometer
+import 'dart:io';
+
+class Thermometer {
+  // late String temperature = _readThermometer(); // Lazily initialized.
+  // creating a private field/property with late modifier
+  late String _readThermometer;
+
+  // Creating the Getter method
+  // to get input from Field/Property
+  String get getTemperature {
+    return _readThermometer;
+  }
+
+  // Creating the setter method
+  // to set the input in Field/Property
+  set setTemperature(String temp) {
+    _readThermometer = temp;
+  }
 }
+
+void main() {
+
+  // Creating Instance of class
+  Thermometer thermometer = Thermometer();
+
+  // Calling the set_name method(setter method we created)
+  // To set the value in Property "_readThermometer"
+
+  String? fahrenheit = stdin.readLineSync();
+
+  thermometer.setTemperature = fahrenheit!;
+
+  // Calling the get_name method(getter method we created)
+  // To get the value from Property "geekName"
+  print('This is your temperature in ${thermometer.getTemperature}');
+
+}
+*/
