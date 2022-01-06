@@ -107,13 +107,36 @@ void main() {
 */
 
 // Final and Const
+/*
 // Final variables are only set once whilst Const variables are compile-time constants (Const variables are implicitly final)
 // Instance variables can be final but not const
 
 void main(List<String> args) {
 
-  final name = 'Bob';
+ // final name = 'Bob'; // Without type annotations
 
-  final String surName = 'Bobby';
+  // final String surName = 'Bobby'; // with type annotations
 
-}
+  // const number = 100000;
+
+  // var foo = const [];
+ // final bar = const [];
+ // const baz = [];
+
+  // foo = [1,2,3];
+  // bar = [1,2,3];
+  // baz = [1,2,3];
+
+  // print(foo);
+  // print(bar);
+  // print(baz);
+
+  /*
+  Compile time constants are  constants whose respective value is known or computed at the time of compilation of source code.
+  Compile-time constants are faster than run-time constants but are less flexible than run-time constants.
+
+  Runtime constants are constants whose respective values can only be known or computed at the time of running of source code.
+  Run time Constants are a bit slower than compile-time constants but are more flexible than compile-time constants.
+  However, once it is initialized, the value of these constants can’t be changed.
+   */
+}*/
