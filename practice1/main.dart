@@ -140,3 +140,36 @@ void main(List<String> args) {
   However, once it is initialized, the value of these constants can’t be changed.
    */
 }*/
+
+// Built-in types
+/*
+/*
+Numbers(int,double)
+Strings(String)
+Booleans(Bool)
+Lists also known as Arrays(List<datatype>)
+Sets(Set)
+Maps(Map)
+Runes(Runes; often replaced by the characters API)
+Symbols(Symbol)
+The value null(Null)
+
+Other types that have special roles in dart.
+Object: The superclass of all Dart classes except Null.
+Future and Stream: Used in asynchrony support.
+Iterable: Used in for-in loops and in synchronous generator functions.
+Never: Indicates that an expression can never successfully finish evaluating. Most often used for functions that always throw an exception.
+dynamic: Indicates that you want to disable static checking. Usually you should use Object or Object? instead.
+void: Indicates that a value is never used. Often used as a return type.
+
+The Object, Object?, Null, and Never classes have special roles in the class hierarchy, as described in the top-and-bottom section of Understanding null safety.
+
+ */
+// Numbers
+void main(List<String> args) {
+  int age = 10; // an integer value
+  double height = 12.0; // double precision or floating point numbers
+
+  print(age);
+  print(height);
+}*/
