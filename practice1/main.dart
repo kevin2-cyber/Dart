@@ -173,3 +173,34 @@ void main(List<String> args) {
   print(age);
   print(height);
 }*/
+// working with numbers
+
+void main(List<String> args) {
+  var x = 1;
+  var hex = 0xDEADBEEF;
+  var exponent = 8e5;
+  num val = 1;
+  val += 2.6;
+
+  print(val.runtimeType);
+
+  // String -> int
+  var one = int.parse('1');
+  assert(one == 1);
+
+// String -> double
+  var onePointOne = double.parse('1.1');
+  assert(onePointOne == 1.1);
+
+// int -> String
+  String oneAsString = 1.toString();
+  assert(oneAsString == '1');
+
+// double -> String
+  String piAsString = 3.14159.toStringAsFixed(2);
+  assert(piAsString == '3.14');
+
+  // print(x.runtimeType); // checking the data type of the variable
+  // print(hex.runtimeType);
+  // print(exponent.runtimeType);
+}
