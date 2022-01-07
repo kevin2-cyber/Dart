@@ -175,7 +175,7 @@ void main(List<String> args) {
 }*/
 // working with numbers
 
-void main(List<String> args) {
+/*void main(List<String> args) {
   var x = 1;
   var hex = 0xDEADBEEF;
   var exponent = 8e5;
@@ -203,4 +203,4 @@ void main(List<String> args) {
   // print(x.runtimeType); // checking the data type of the variable
   // print(hex.runtimeType);
   // print(exponent.runtimeType);
-}
+}*/
