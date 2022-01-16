@@ -33,7 +33,16 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Radial Speed Meter Gauge')),
+        title: const Center(
+            child: Text(
+                'Radial Speed Meter Gauge',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 25.0,
+                color: Colors.white70,
+              ),
+            ),
+        ),
         backgroundColor: Colors.blueGrey.shade800,
       ),
       body: Container(
