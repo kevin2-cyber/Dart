@@ -1,7 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="PYTHON_MODULE" version="4">
-  <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/practice3/build" />
+      <excludeFolder url="file://$MODULE_DIR$/practice3/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/practice3/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/sign_up_page_sample/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/sign_up_page_sample/build" />
+      <excludeFolder url="file://$MODULE_DIR$/sign_up_page_sample/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/practice12/build" />
+      <excludeFolder url="file://$MODULE_DIR$/practice12/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/practice12/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/practice8/build" />
+      <excludeFolder url="file://$MODULE_DIR$/practice8/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/practice8/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/practice10/build" />
+      <excludeFolder url="file://$MODULE_DIR$/practice10/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/practice10/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/practice7/build" />
+      <excludeFolder url="file://$MODULE_DIR$/practice7/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/practice7/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/practice2/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/practice2/build" />
+      <excludeFolder url="file://$MODULE_DIR$/practice2/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/practice5/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/practice5/build" />
+      <excludeFolder url="file://$MODULE_DIR$/practice5/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/practice6/build" />
+      <excludeFolder url="file://$MODULE_DIR$/practice6/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/practice6/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/practice14/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/practice14/build" />
+      <excludeFolder url="file://$MODULE_DIR$/practice14/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/practice9/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/practice9/build" />
+      <excludeFolder url="file://$MODULE_DIR$/practice9/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/practice11/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/practice11/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/practice11/build" />
+      <excludeFolder url="file://$MODULE_DIR$/practice13/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/practice13/build" />
+      <excludeFolder url="file://$MODULE_DIR$/practice13/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/onboarding_screen/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/onboarding_screen/build" />
+      <excludeFolder url="file://$MODULE_DIR$/onboarding_screen/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/practice4/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/practice4/build" />
+      <excludeFolder url="file://$MODULE_DIR$/practice4/.pub" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
