@@ -6,8 +6,6 @@ import 'icon_content.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
-
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
 
