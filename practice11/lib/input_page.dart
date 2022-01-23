@@ -88,17 +88,26 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          const Expanded(
-            child: ReusableCard(colour: kactiveCardColor),
+          Expanded(
+            child: ReusableCard(
+                colour: kactiveCardColor,
+              child: Container(),
+            ),
           ),
           Expanded(
             child: Row(
-              children: const <Widget>[
+              children: <Widget>[
                 Expanded(
-                  child: ReusableCard(colour: kactiveCardColor),
+                  child: ReusableCard(
+                      colour: kactiveCardColor,
+                    child: Container(),
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(colour: kactiveCardColor),
+                  child: ReusableCard(
+                      colour: kactiveCardColor,
+                    child: Container(),
+                  ),
                 ),
               ],
             ),
