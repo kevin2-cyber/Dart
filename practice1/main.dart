@@ -241,7 +241,7 @@ void main(List<String> args) {
  */
 
 // Lists or Arrays
-
+/*
 void main(List<String> args) {
   List<Object> car = ['BMW', 20, false, 30.0];
   var cars = []; // empty list
@@ -250,17 +250,20 @@ void main(List<String> args) {
   print(cars.length);
   print(car.length);
 }
+ */
 // Functions
 // Functions are "self contained" modules of code that accomplish a specific task.
 // Functions usually "take in" data, process it, and "return" a result.
 // Once a function is written, it can be used over and over and over again.
 // Functions can be "called" from the inside of other functions.
 // function that takes in variable {wheel} as a parameter with the type integer and returns wheel as an output.
-/*int car(int wheel) {
+int car(int wheel) {
   wheel +=1;
   return wheel;
 }
 
 void main(List<String> args) {
   // print(car(9));
-}*/
+  Set cars = <String>{'BMW','Toyota','Honda'};
+  print(cars);
+}
