@@ -233,8 +233,34 @@ void main(List<String> args) {
 */
 
 // Strings
-
+/*
 void main(List<String> args) {
   String variable = 'Hello';
   print('$variable world'); // Using String interpolation
 }
+ */
+
+// Lists or Arrays
+
+void main(List<String> args) {
+  List<Object> car = ['BMW', 20, false, 30.0];
+  var cars = []; // empty list
+  const vars = [];
+  final val = [];
+  print(cars.length);
+  print(car.length);
+}
+// Functions
+// Functions are "self contained" modules of code that accomplish a specific task.
+// Functions usually "take in" data, process it, and "return" a result.
+// Once a function is written, it can be used over and over and over again.
+// Functions can be "called" from the inside of other functions.
+// function that takes in variable {wheel} as a parameter with the type integer and returns wheel as an output.
+/*int car(int wheel) {
+  wheel +=1;
+  return wheel;
+}
+
+void main(List<String> args) {
+  // print(car(9));
+}*/
