@@ -218,3 +218,23 @@ Registry: external.system.auto.import.disabled=true
 Non-Bundled Plugins: Dart, com.thoughtworks.gauge, org.jetbrains.kotlin, io.flutter, org.intellij.plugins.markdown
 
  */
+
+// More on numbers
+/*
+void main(List<String> args) {
+  // print(identical(1.0, 1));
+  // print(double.nan == double.nan);
+  // print((0.5 + 0.5) is bool);
+  var count = 10.0 * 2;
+  var message = "$count cows";
+  if (message != "20.0 cows") throw Exception("Unexpected: $message");
+  print(message);
+}
+*/
+
+// Strings
+
+void main(List<String> args) {
+  String variable = 'Hello';
+  print('$variable world'); // Using String interpolation
+}
