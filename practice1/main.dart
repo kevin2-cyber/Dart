@@ -265,5 +265,5 @@ int car(int wheel) {
 void main(List<String> args) {
   // print(car(9));
   Set cars = <String>{'BMW','Toyota','Honda'};
-  print(cars);
+  print(cars.isEmpty);
 }
