@@ -257,6 +257,7 @@ void main(List<String> args) {
 // Once a function is written, it can be used over and over and over again.
 // Functions can be "called" from the inside of other functions.
 // function that takes in variable {wheel} as a parameter with the type integer and returns wheel as an output.
+/*
 int car(int wheel) {
   wheel +=1;
   return wheel;
@@ -267,3 +268,5 @@ void main(List<String> args) {
   Set cars = <String>{'BMW','Toyota','Honda'};
   print(cars.isEmpty);
 }
+ */
+
