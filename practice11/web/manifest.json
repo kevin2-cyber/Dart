@@ -1,6 +1,6 @@
 {
-    "name": "practice11",
-    "short_name": "practice11",
+    "name": "bmi_calculator",
+    "short_name": "bmi_calculator",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
