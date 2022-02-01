@@ -1,4 +1,7 @@
+import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
+
+import 'input_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -9,11 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Container(
-          color: Colors.redAccent,
-        ),
-      ),
+      theme: kappBarThemeColor,
+      home: const InputPage(),
     );
   }
 }
+
