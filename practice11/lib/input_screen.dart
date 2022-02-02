@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
 
 
@@ -17,12 +18,62 @@ class _InputPageState extends State<InputPage> {
           child: Text('BMI CALCULATOR'),
         ),
       ),
-      body: const Center(
-        child: Text('Body Text'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {  },
-        child: const Icon(Icons.add),
+      body: Column(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Container(
+                margin: const EdgeInsets.all(20.0),
+                decoration: BoxDecoration(
+                  color: kactiveCardColor,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                height: 165.0,
+                width: 165.0,
+              ),
+              Container(
+                margin: const EdgeInsets.all(20.0),
+                decoration: BoxDecoration(
+                  color: kactiveCardColor,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                height: 165.0,
+                width: 165.0,
+              ),
+            ],
+          ),
+          Container(
+            margin: const EdgeInsets.all(20.0),
+            decoration: BoxDecoration(
+              color: kactiveCardColor,
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            height: 170.0,
+          ),
+          Row(
+            children: <Widget>[
+              Container(
+                margin: const EdgeInsets.all(20.0),
+                decoration: BoxDecoration(
+                  color: kactiveCardColor,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                height: 165.0,
+                width: 165.0,
+              ),
+              Container(
+                margin: const EdgeInsets.all(20.0),
+                decoration: BoxDecoration(
+                  color: kactiveCardColor,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                height: 165.0,
+                width: 165.0,
+              ),
+            ],
+          ),
+
+        ],
       ),
     );
   }
