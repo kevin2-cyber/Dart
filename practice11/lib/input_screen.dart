@@ -1,5 +1,7 @@
-import 'package:bmi_calculator/constants.dart';
+// import 'package:bmi_calculator/constants.dart';
+import 'package:bmi_calculator/reusable_card.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class InputPage extends StatefulWidget {
@@ -14,67 +16,45 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text('BMI CALCULATOR'),
+        title: Center(
+          child: Text(
+              'BMI CALCULATOR',
+            style: GoogleFonts.poppins(),
+          ),
         ),
       ),
       body: Column(
         children: <Widget>[
-          Row(
-            children: <Widget>[
-              Container(
-                margin: const EdgeInsets.all(20.0),
-                decoration: BoxDecoration(
-                  color: kactiveCardColor,
-                  borderRadius: BorderRadius.circular(10.0),
+          Expanded(
+            child: Row(
+              children: const <Widget>[
+                Expanded(
+                  child: ReusableCard(),
                 ),
-                height: 165.0,
-                width: 165.0,
-              ),
-              Container(
-                margin: const EdgeInsets.all(20.0),
-                decoration: BoxDecoration(
-                  color: kactiveCardColor,
-                  borderRadius: BorderRadius.circular(10.0),
+                Expanded(
+                  child: ReusableCard(),
                 ),
-                height: 165.0,
-                width: 165.0,
-              ),
-            ],
-          ),
-          Container(
-            margin: const EdgeInsets.all(20.0),
-            decoration: BoxDecoration(
-              color: kactiveCardColor,
-              borderRadius: BorderRadius.circular(10.0),
+              ],
             ),
-            height: 170.0,
           ),
-          Row(
-            children: <Widget>[
-              Container(
-                margin: const EdgeInsets.all(20.0),
-                decoration: BoxDecoration(
-                  color: kactiveCardColor,
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                height: 165.0,
-                width: 165.0,
-              ),
-              Container(
-                margin: const EdgeInsets.all(20.0),
-                decoration: BoxDecoration(
-                  color: kactiveCardColor,
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                height: 165.0,
-                width: 165.0,
-              ),
-            ],
+          const Expanded(
+            child: ReusableCard(),
           ),
-
+          Expanded(
+            child: Row(
+              children: const <Widget>[
+                Expanded(
+                  child: ReusableCard(),
+                ),
+                Expanded(
+                  child: ReusableCard(),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
