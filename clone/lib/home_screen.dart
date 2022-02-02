@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('images/image.jpg'),
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
               ),
             ),
         child: Column(
@@ -26,12 +26,12 @@ class Home extends StatelessWidget {
               color: Colors.red,
               shape: const StadiumBorder(),
               child: Text(
-                  'explore',
+                  'exploré',
                 style: GoogleFonts.poppins(
                   textStyle: const TextStyle(
                     fontWeight: FontWeight.w300,
                     fontSize: 20.0,
-                    color: Colors.black12,
+                    color: Colors.white,
                   ),
                 ),
               ),
