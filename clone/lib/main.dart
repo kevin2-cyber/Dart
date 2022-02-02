@@ -12,9 +12,7 @@ class CloneApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      home: const Scaffold(
-        body: Home(),
-      ),
+      home: const Home(),
     );
   }
 }
