@@ -11,10 +11,6 @@ Recipe({
 
 static List<Recipe> samples = [
   Recipe(
-    label: 'Palmnut Soup',
-    imageUrl: 'images/palmnut.jpg',
-  ),
-  Recipe(
     label: 'Spaghetti and Meatballs',
     imageUrl: 'images/spaghetti.jpg',
   ),
@@ -24,15 +20,19 @@ static List<Recipe> samples = [
   ),
   Recipe(
     label: 'Grilled Cheese',
-    imageUrl: 'images/grilled.jpg',
+    imageUrl: 'images/grilled_cheese.jpg',
+  ),
+  Recipe(
+    label: 'Chocolate Chip Cookies',
+    imageUrl: 'images/chocolate_chips.jpg',
   ),
   Recipe(
     label: 'Tacos Salad',
     imageUrl: 'images/tacos.jpg',
   ),
   Recipe(
-    label: 'Chocolate Chip Cookies',
-    imageUrl: 'images/chocolate.jpg',
+    label: 'Hawaiian Pizza',
+    imageUrl: 'images/hawaii.jpg',
   ),
 ];
 
