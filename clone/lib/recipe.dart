@@ -28,7 +28,7 @@ static List<Recipe> samples = [
   ),
   Recipe(
     label: 'Tacos Salad',
-    imageUrl: 'images/tacos.jpg',
+    imageUrl: 'images/tacosalad.jpg',
   ),
   Recipe(
     label: 'Hawaiian Pizza',
