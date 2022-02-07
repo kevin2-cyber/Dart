@@ -20,7 +20,9 @@ class _HomeState extends State<Home> {
 
       // AppBar gets a title property by using a Text Widget.
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Center(
+            child: Text(widget.title),
+        ),
       ),
       /*
       body has SafeArea, which keeps the app from getting too close to the operating system
