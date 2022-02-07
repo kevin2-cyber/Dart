@@ -1,6 +1,6 @@
 import 'package:essilfie_clone/recipe.dart';
 import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key, required this.title}) : super(key: key);
@@ -21,7 +21,10 @@ class _HomeState extends State<Home> {
       // AppBar gets a title property by using a Text Widget.
       appBar: AppBar(
         title: Center(
-            child: Text(widget.title),
+            child: Text(
+                widget.title,
+              style: GoogleFonts.poppins(),
+            ),
         ),
       ),
       /*
@@ -52,17 +55,35 @@ class _HomeState extends State<Home> {
   Widget buildRecipeCard(Recipe recipe) {
     // Return a card from buildRecipeCard()
     return Card(
+      elevation: 2.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
       // A widget that defines a vertical layout.
-      child: Column(
-        // Has 2 children
-        children: <Widget>[
-          // AssetImage states that the image is fetched from the local asset bundle defined in the pubspec.yaml
-          Image(
-            image: AssetImage(recipe.imageUrl),
-          ),
-          // Contains the recipe.label value
-          Text(recipe.label),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          // Has 2 children
+          children: <Widget>[
+            // AssetImage states that the image is fetched from the local asset bundle defined in the pubspec.yaml
+            Image(
+              image: AssetImage(recipe.imageUrl),
+            ),
+            const SizedBox(
+              height: 14.0,
+            ),
+            // Contains the recipe.label value
+            Text(
+                recipe.label,
+              style: GoogleFonts.poppins(
+                textStyle: const TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
