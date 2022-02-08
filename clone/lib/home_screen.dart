@@ -1,4 +1,5 @@
 import 'package:essilfie_clone/recipe.dart';
+import 'package:essilfie_clone/recipe_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -23,7 +24,7 @@ class _HomeState extends State<Home> {
         title: Center(
             child: Text(
                 widget.title,
-              style: GoogleFonts.poppins(),
+              style: GoogleFonts.lato(),
             ),
         ),
       ),
@@ -43,25 +44,40 @@ class _HomeState extends State<Home> {
             itemBuilder: (BuildContext context, int index){
               // Displays the name of the recipe
               //TODO: Update to return Recipe card
-              //TODO: Add a GestureDetector
-              return buildRecipeCard(Recipe.samples[index]);
+              return GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) {
+                            return RecipeDetail(recipe: Recipe.samples[index]);
+                            },
+                          ),
+                  );
+                },
+                  child: buildRecipeCard(Recipe.samples[index]),
+              );
             },
           ),
         ),
       ),
     );
   }
-  //TODO: Add buildRecipeCard() here
+
   Widget buildRecipeCard(Recipe recipe) {
     // Return a card from buildRecipeCard()
     return Card(
+      // A card's elevation determines how high off the screen the card is,
+      // affecting it's shadow.
       elevation: 2.0,
+      // shape handles the shape of the card.
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
-      // A widget that defines a vertical layout.
+      // Padding insert's it's child's content by the specified padding value.
       child: Padding(
         padding: const EdgeInsets.all(16.0),
+        // A widget that defines a vertical layout.
         child: Column(
           // Has 2 children
           children: <Widget>[
@@ -69,6 +85,7 @@ class _HomeState extends State<Home> {
             Image(
               image: AssetImage(recipe.imageUrl),
             ),
+            // This is a blank view with a fixed sized.
             const SizedBox(
               height: 14.0,
             ),
